@@ -83,6 +83,15 @@
     border: #636804;
     cursor: pointer;
 }
+.container{
+    display: flex;
+  
+   
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    position: sticky;
+}
 
 @media screen and (min-width:400px) and (max-width:700px) {
     .top_bar {
