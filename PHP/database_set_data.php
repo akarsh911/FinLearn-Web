@@ -56,7 +56,7 @@ function get_email($email)
 function login($email, $psw_hash)
 {
     $conn = openCon();
-    $sql = "SELECT f_name FROM city_users WHERE (email='$email' || ph_no='$email') && psw_hash='$psw_hash'";
+    $sql = "SELECT * FROM students WHERE (email='$email' || ph_no='$email') && psw_hash='$psw_hash'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
