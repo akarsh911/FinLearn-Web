@@ -63,7 +63,16 @@ body {
     margin-right: 10px;
     border-radius: 25px;
 }
-
+.log_in_bt{
+    border: #106409;
+   font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 25px;
+}
 .stock_btn {
    
     border: #636804;
@@ -75,6 +84,17 @@ body {
     margin-right: 10px;
     border-radius: 25px;
 }
+.register{
+    border: #636804;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 25px;
+}
+
 .expense_btn{
     border: #cbd334;
     font-weight: bold;
@@ -85,7 +105,16 @@ body {
     margin-right: 10px;
     border-radius: 25px;
 }
-
+.log_in_bt:hover{
+    background-color: rgb(235, 222, 102);
+    border: #106409;
+    cursor: pointer;
+}
+.register:hover{
+    background-color: rgb(235, 222, 102);
+    border: #106409;
+    cursor: pointer;
+}
 .community_btn:hover{
    background-color: rgb(235, 222, 102);
     border: #106409;
