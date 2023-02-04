@@ -1,192 +1,102 @@
-window.addEventListener("mousemove", (e) => {
-    var rect = document.querySelector(".blur").getBoundingClientRect();
-    var x = e.clientX - rect.left - 50;
-    var y = e.clientY - rect.top - 60;
-    document.querySelector(".blur").style.backgroundPosition = `${x}px ${y}px`;
-  
-    var rect1 = document.querySelector(".dark .blur").getBoundingClientRect();
-    var x1 = e.clientX - rect1.left - 50;
-    var y1 = e.clientY - rect1.top - 60;
-    document.querySelector(
-      ".dark .blur"
-    ).style.backgroundPosition = `${x1}px ${y1}px`;
-  });
-  
-  document.querySelector(".blur").addEventListener("mousemove", (e) => {
-    var rect = e.target.getBoundingClientRect();
-    var x = e.clientX - rect.left-50;
-    var y = e.clientY - rect.top-60;
-    document.querySelector(".blur").style.backgroundPosition = `${x}px ${y}px`;
-    document.querySelector(
-      ".card"
-    ).style.boxShadow = `rgba(99, 99, 99, 0.3) 0px 2px 10px 0px`;
-    document.querySelector(
-      `.card`
-    ).style.transition = `all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-    document.querySelector(".blur").style.backgroundSize = `100px 120px`;
-    document.querySelector(
-      `.blur`
-    ).style.transition = `background 0.9s cubic-bezier(2, 0.2, 0.5, 2)`;
-    document.querySelector(".blur").style.backgroundRepeat = `no-repeat`;
-    document.querySelector(
-      "figure"
-    ).style.transition = `border 0.5s cubic-bezier(9, 0.2, 0.25, 2)`;
-    if (x < 150 && y < 40) {
-      document.querySelector(
-        `.flex-b:nth-of-type(2n) .skew:nth-of-type(2n)`
-      ).style.background = `#E7EEEC`;
-  
-      document.querySelector(
-        `.flex-b:nth-of-type(2n) .skew:nth-of-type(2n)`
-      ).style.border = "1px solid #E9F3EC";
-    } else if (x > 160 && y < 90) {
-      document.querySelector(
-        `.flex-b:nth-of-type(4n) .skew:nth-of-type(2n)`
-      ).style.background = `#E9F3EC`;
-    } else {
-      document.querySelector(
-        `.flex-b:nth-of-type(2n) .skew:nth-of-type(2n)`
-      ).style.background = `#F8F7F8`;
-      document.querySelector(
-        `.flex-b:nth-of-type(4n) .skew:nth-of-type(2n)`
-      ).style.background = `#F8F7F8`;
-  
-      document.querySelector(
-        `.flex-b:nth-of-type(2n) .skew:nth-of-type(2n)`
-      ).style.border = "1px solid#FAF9FA";
-    }
-    if (x < 150) {
-      if (y > 90) {
-        document.querySelector(
-          `.blur`
-        ).style.backgroundImage = `radial-gradient(#619C7A, #4A8B44)`;
-  
-        document.querySelector("figure").style.border = `1px solid #d3d1d3`;
-      } else {
-        document.querySelector(
-          `.blur`
-        ).style.backgroundImage = `radial-gradient(#619C7A, #76AF8E)`;
-        document.querySelector("figure").style.border = `1px solid #99C295`;
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function (e) {
+    var a, b, i, val = this.value;
+    /*close any already open lists of autocompleted values*/
+    closeAllLists();
+    if (!val) { return false; }
+    currentFocus = -1;
+    /*create a DIV element that will contain the items (values):*/
+    a = document.createElement("DIV");
+    a.setAttribute("id", this.id + "autocomplete-list");
+    a.setAttribute("class", "autocomplete-items");
+    /*append the DIV element as a child of the autocomplete container:*/
+    this.parentNode.appendChild(a);
+    /*for each item in the array...*/
+    for (i = 0; i < arr.length; i++) {
+      /*check if the item starts with the same letters as the text field value:*/
+      if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+        /*create a DIV element for each matching element:*/
+        b = document.createElement("DIV");
+        /*make the matching letters bold:*/
+        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+        b.innerHTML += arr[i].substr(val.length);
+        /*insert a input field that will hold the current array item's value:*/
+        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+        /*execute a function when someone clicks on the item value (DIV element):*/
+        b.addEventListener("click", function (e) {
+          /*insert the value for the autocomplete text field:*/
+          inp.value = this.getElementsByTagName("input")[0].value;
+          /*close the list of autocompleted values,
+          (or any other open lists of autocompleted values:*/
+          closeAllLists();
+        });
+        a.appendChild(b);
       }
-    } else {
-      document.querySelector("figure").style.border = `1px solid #d3d1d3`;
-      if (y > 50) {
-        document.querySelector(
-          `.blur`
-        ).style.backgroundImage = `radial-gradient(#DAEDE3, #B9EC2A)`;
-      } else
-        document.querySelector(
-          `.blur`
-        ).style.backgroundImage = `radial-gradient(#DAEDE3, #67EC2A)`;
     }
-    document.querySelector("figure").style.background = `white`;
   });
-  
-  document.querySelector(".blur").addEventListener("mouseout", (e) => {
-    var rect = e.target.getBoundingClientRect();
-    var x = e.clientX - rect.left;
-    var y = e.clientY - rect.top;
-    document.querySelector(
-      `.blur`
-    ).style.transition = `background 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-    document.querySelector(".blur").style.backgroundPosition = `${x}px ${y}px`;
-  
-    document.querySelector(".blur").style.background = `transparent`;
-    document.querySelector("figure").style.background = `#f4f2f4`;
-    document.querySelector(
-      `.flex-b:nth-of-type(2n) .skew:nth-of-type(2n)`
-    ).style.background = `#F8F7F8`;
-    document.querySelector(
-      `.flex-b:nth-of-type(4n) .skew:nth-of-type(2n)`
-    ).style.background = `#F8F7F8`;
-    document.querySelector("figure").style.border = `1px solid #d3d1d3`;
-    document.querySelector(
-      ".card"
-    ).style.boxShadow = `rgba(99, 99, 99, 0.1) 0px 2px 8px 0px`;
-  });
-  
-  document.querySelector(".dark .blur").addEventListener("mousemove", (e) => {
-    var rect = e.target.getBoundingClientRect();
-    var x = e.clientX - rect.left;
-    var y = e.clientY - rect.top;
-    // document.querySelector(
-    //   ".dark .blur"
-    // ).style.backgroundPosition = `${x}px ${y}px`;
-    document.querySelector(
-      ".dark.card"
-    ).style.boxShadow = `#8EB065 0px 2px 10px 0px`;
-    document.querySelector(
-      `.dark.card`
-    ).style.transition = `all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-    document.querySelector(".dark .blur").style.backgroundSize = `100px 120px`;
-    document.querySelector(
-      `.dark .blur`
-    ).style.transition = `background 0.9s cubic-bezier(2, 0.2, 0.5, 2)`;
-    document.querySelector(".dark .blur").style.backgroundRepeat = `no-repeat`;
-    document.querySelector(".dark figure").style.transition = `f
-    0.5s cubic-bezier(9, 0.2, 0.25, 2)`;
-    if (x < 150 && y < 40) {
-      document.querySelector(
-        `.dark .flex-b:nth-of-type(2n) .skew:nth-of-type(2n)`
-      ).style.background = `#1F2923`;
-    } else if (x > 160 && y < 90) {
-      document.querySelector(
-        `.dark .flex-b:nth-of-type(4n) .skew:nth-of-type(2n)`
-      ).style.background = `#1F2923`;
-    } else {
-      document.querySelector(
-        `.dark .flex-b:nth-of-type(2n) .skew:nth-of-type(2n)`
-      ).style.background = `#212124`;
-      document.querySelector(
-        `.dark .flex-b:nth-of-type(4n) .skew:nth-of-type(2n)`
-      ).style.background = `#212124`;
-    }
-    if (x < 150) {
-      if (y > 90) {
-        document.querySelector(
-          `.dark .blur`
-        ).style.backgroundImage = `radial-gradient(#619C7A, #4A8B44)`;
-  
-        document.querySelector(".dark figure").style.border = `1px solid #64BC87`;
-        document.querySelector(".dark svg").style.stroke = `#64BC87`;
-      } else {
-        document.querySelector(
-          `.dark .blur`
-        ).style.backgroundImage = `radial-gradient(#619C7A, #76AF8E)`;
-  
-        document.querySelector(".dark figure").style.border = `1px solid #64BC87`;
-        document.querySelector(".dark svg").style.stroke = `#64BC87`;
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function (e) {
+    var x = document.getElementById(this.id + "autocomplete-list");
+    if (x) x = x.getElementsByTagName("div");
+    if (e.keyCode == 40) {
+      /*If the arrow DOWN key is pressed,
+      increase the currentFocus variable:*/
+      currentFocus++;
+      /*and and make the current item more visible:*/
+      addActive(x);
+    } else if (e.keyCode == 38) { //up
+      /*If the arrow UP key is pressed,
+      decrease the currentFocus variable:*/
+      currentFocus--;
+      /*and and make the current item more visible:*/
+      addActive(x);
+    } else if (e.keyCode == 13) {
+      /*If the ENTER key is pressed, prevent the form from being submitted,*/
+      e.preventDefault();
+      if (currentFocus > -1) {
+        /*and simulate a click on the "active" item:*/
+        if (x) x[currentFocus].click();
       }
-    } else {
-      document.querySelector(".dark figure").style.border = `1px solid #636368`;
-      document.querySelector(".dark svg").style.stroke = `#d3d1d3`;
-      if (y > 50) {
-        document.querySelector(
-          `.dark .blur`
-        ).style.backgroundImage = `radial-gradient(#DAEDE3, #B9EC2A)`;
-      } else
-        document.querySelector(
-          `.dark .blur`
-        ).style.backgroundImage = `radial-gradient(#DAEDE3, #67EC2A)`;
     }
-    document.querySelector(".dark figure").style.background = `#2F2F33`;
   });
-  
-  document.querySelector(".dark .blur").addEventListener("mouseout", (e) => {
-    document.querySelector(".dark .blur").style.background = `transparent`;
-    document.querySelector(".dark figure").style.background = `#2F2F33`;
-    document.querySelector(
-      `.dark .flex-b:nth-of-type(2n) .skew:nth-of-type(2n)`
-    ).style.background = `#212124`;
-    document.querySelector(
-      `.dark .flex-b:nth-of-type(4n) .skew:nth-of-type(2n)`
-    ).style.background = `#212124`;
-    document.querySelector(".dark figure").style.border = `1px solid #636368`;
-  
-    document.querySelector(
-      ".dark.card"
-    ).style.boxShadow = `#929995 0px 2px 8px 0px`;
-    document.querySelector(".dark svg").style.stroke = `#B1B1B6`;
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+    closeAllLists(e.target);
   });
-  
-  
+}
+
+/*An array containing all the country names in the world:*/
+var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central Arfrican Republic", "Chad", "Chile", "China", "Colombia", "Congo", "Cook Islands", "Costa Rica", "Cote D Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands", "Faroe Islands", "Fiji", "Finland", "France", "French Polynesia", "French West Indies", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauro", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russia", "Rwanda", "Saint Pierre & Miquelon", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "St Kitts & Nevis", "St Lucia", "St Vincent", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad & Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks & Caicos", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Virgin Islands (US)", "Yemen", "Zambia", "Zimbabwe"];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), countries);
