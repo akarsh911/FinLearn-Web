@@ -1,5 +1,4 @@
 .tradingview-widget-container {
-  padding-left: 2%;
   padding-top: 0%;
 }
 
@@ -74,6 +73,10 @@ p {
   justify-content: space-around;
   background: white;
   margin-top: 40px;
+
+}
+
+.right_top {
   width: calc(100vw - 450px);
 }
 
