@@ -2,6 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/php/database_connect.php");
 function create_user($username,$email, $f_name, $l_name, $ph_no, $psw_hash)
 {
+    $username=$email;
     $conn = openCon();
     $sql = "INSERT INTO students (username,f_name,l_name,email,ph_no,psw_hash,user_state,wallet_balance) VALUES ('$username','$f_name','$l_name','$email','$ph_no','$psw_hash','user_first','10000')";
     if ($conn->query($sql) === TRUE) {
