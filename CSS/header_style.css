@@ -1,3 +1,7 @@
+body {
+    display: block;
+    margin: 0px;
+}   
 .top_bar {
     min-width: min-content;
     width: 90vw;
@@ -48,22 +52,10 @@
     align-items: center;
 }
 
-.log_in_bt {
-    background-color: #1c9711;
+.community_btn {
+    
     border: #106409;
-    color: white;
-    font-size: 16px;
-    padding: 10px;
-    height: 40px;
-    width: 150px;
-    margin-right: 25px;
-    border-radius: 25px;
-}
-
-.register {
-    background-color: #d2bf0d;
-    border: #636804;
-    color: white;
+   font-weight: bold;
     font-size: 16px;
     padding: 10px;
     height: 40px;
@@ -72,26 +64,81 @@
     border-radius: 25px;
 }
 
-.log_in_bt:hover {
-    background-color: #106409;
+.stock_btn {
+   
+    border: #636804;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 25px;
+}
+.expense_btn{
+    border: #cbd334;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 25px;
+}
+
+.community_btn:hover{
+   background-color: rgb(235, 222, 102);
     border: #106409;
     cursor: pointer;
 }
 
-.register:hover {
-    background-color: #ab9b0a;
+.stock_btn:hover {
+   background-color: rgb(235, 222, 102);
+    border: #636804;
+    cursor: pointer;
+}
+.expense_btn:hover{
+    background-color: rgb(235, 222, 102);
     border: #636804;
     cursor: pointer;
 }
 .container{
     display: flex;
-  
-   
+   padding-top: 12vh;
+   width: 100vw;
     display: flex;
     align-items: center;
-    z-index: 5;
-    position: sticky;
+   padding-bottom: 1vh;
+   margin-left: 0%;
+   
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: normal;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ebde66;
 }
+.left_align{
+    padding-left: 1vw;
+    font-size: 3vh;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    font-family: Verdana, sans-serif;
+}
+.right_align{
+    padding-right: 2vw;
+    font-size: 3vh;
+    height: 100%;
+    max-height: 100%;
+    font-family: Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+}
+#user_name_topbar{
+    padding-left: 5px;
+}
+
 
 @media screen and (min-width:400px) and (max-width:700px) {
     .top_bar {
