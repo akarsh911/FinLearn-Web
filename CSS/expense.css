@@ -16,7 +16,7 @@ body{
   p{
     font-weight: bold;
   }
-  .card.open {
+  .cards.open {
     height: 200px;
     background: #ffffff;
   }
@@ -40,4 +40,18 @@ body{
       height: 100%;
       justify-content: space-between;
       padding: 10px;
+      margin-top: 6vh;
+  }
+  .hold2{
+    background: white;
+    border-color: red;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 15px;
+      display: flex;
+      width:100%;
+      height: 100%;
+      justify-content: space-between;
+      padding: 10px;
+      margin-top: 6vh;
   }
