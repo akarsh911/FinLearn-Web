@@ -94,7 +94,18 @@ body {
     margin-right: 10px;
     border-radius: 25px;
 }
-
+.container_yt{
+    padding-top: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+}
+h1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 .expense_btn{
     border: #cbd334;
     font-weight: bold;
