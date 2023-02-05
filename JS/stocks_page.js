@@ -64,20 +64,11 @@ inputBox.onkeyup = (e) => {
       });
   }
 
+  json = "";
+  suggestions = [];
+  emptyArray = [];
+}
 
-}
-function get_code(name, json) {
-  for (var i = 0; i < json.bestMatches.length; i++) {
-    if (json.bestMatches[i].name == name)
-      return json.bestMatches[i].symbol;
-  }
-}
-function get_country(name, json) {
-  for (var i = 0; i < json.bestMatches.length; i++) {
-    if (json.bestMatches[i].name == name)
-      return json.bestMatches[i].region;
-  }
-}
 function select(element) {
   let selectData = element.textContent;
   inputBox.value = selectData;
@@ -99,8 +90,7 @@ function showSuggestions(list) {
   }
   suggBox.innerHTML = listData;
 }
-function
-  get_stock_exchange(symbol, country) {
+function get_stock_exchange(symbol, country) {
   if (symbol.indexOf('.') != -1) {
     symbol = symbol.substring(symbol.indexOf('.'), symbol.length - 1)
   }
@@ -121,4 +111,16 @@ function
       }
     }
   );
+}
+function get_code(name, json) {
+  for (var i = 0; i < json.bestMatches.length; i++) {
+    if (json.bestMatches[i].name == name)
+      return json.bestMatches[i].symbol;
+  }
+}
+function get_country(name, json) {
+  for (var i = 0; i < json.bestMatches.length; i++) {
+    if (json.bestMatches[i].name == name)
+      return json.bestMatches[i].region;
+  }
 }
