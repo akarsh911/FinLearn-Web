@@ -31,7 +31,7 @@ body{
   
   .hold{
     background: white;
-    border-color: green;
+    border-color: #7ac57d;
     border-style: solid;
     border-width: 5px;
     border-radius: 15px;
@@ -44,7 +44,7 @@ body{
   }
   .hold2{
     background: white;
-    border-color: red;
+    border-color: #ff5722;
     border-style: solid;
     border-width: 5px;
     border-radius: 15px;
@@ -55,3 +55,36 @@ body{
       padding: 10px;
       margin-top: 6vh;
   }
+  .cssbuttons-io-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0.7em 1.4em 0.7em 1.1em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, rgb(119 119 112) 0%, rgb(226 255 10) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+   }
+   
+   .cssbuttons-io-button svg {
+    margin-right: 6px;
+   }
+   
+   .cssbuttons-io-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+    cursor: pointer;
+   }
+   
+   .cssbuttons-io-button:active {
+    box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+   }
+   button{
+    position: fixed;
+    bottom: 15px;
+    right: 15px; 
+   }
