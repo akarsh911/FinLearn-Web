@@ -1,4 +1,10 @@
 READ ME:
+
+
+Deployed Link:http://finlearntu.000webhostapp.com/
+Open Deployed Link with mobile data on Laptop(WebApp not yet optimized for Mobile Version)
+** On Thapar WiFI it shows DNS Error
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 To Run this project you need to host this site on a Apache Server and configure database_connect.php flie.
 INTRODUCTION:
 Finlearn helps inculcate the knowledge of day to day
