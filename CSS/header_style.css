@@ -106,6 +106,7 @@ body {
     flex-direction: column;
     align-content: space-around;
     
+    
 }
 
 h1 {
@@ -157,36 +158,37 @@ h1 {
 
 .container {
     display: flex;
-    padding-top: 12vh;
+    padding-top: 14vh;
     width: 100vw;
     display: flex;
     align-items: center;
     padding-bottom: 1vh;
     margin-left: 0%;
-
+   font-weight: bold;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: normal;
     justify-content: space-between;
     align-items: center;
     background-color: #ebde66;
+    
 }
 
 .left_align {
     padding-left: 1vw;
-    font-size: 3vh;
+    font-size: 4vh;
     height: 100%;
     max-height: 100%;
     display: flex;
-    font-family: 'Times New Roman', serif;
+   font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 .right_align {
     padding-right: 2vw;
-    font-size: 3vh;
+    font-size: 4vh;
     height: 100%;
     max-height: 100%;
-    font-family: 'Times New Roman', serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     display: flex;
     align-items: center;
 }
