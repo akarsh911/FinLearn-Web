@@ -42,19 +42,7 @@ function get_email($email)
         return 0;
     }
 }
-function get_stock_hold($stock_name,$email)
-{
-    $conn = openCon();
-    $sql = "SELECT  FROM ".$email." WHERE stock_name='$stock_name'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            return $row['email'];
-        }
-    } else {
-        return 0;
-    }
-}
+
 function get_balance_values($email)
 {
     $user_object = new stdClass();
@@ -69,6 +57,20 @@ function get_balance_values($email)
             );
             $json = json_encode($arr);
             return $json;
+        }
+    } else {
+        return "nf";
+    }
+}
+function get_balance_values2($email)
+{
+    $user_object = new stdClass();
+    $conn = openCon();
+    $sql = "SELECT * FROM students WHERE (email='$email' || ph_no='$email')";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+           return $row["wallet_balance"];
         }
     } else {
         return "nf";

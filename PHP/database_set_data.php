@@ -6,7 +6,6 @@ function create_user($username, $email, $f_name, $l_name, $ph_no, $psw_hash)
     $conn = openCon();
     $sql = "INSERT INTO students (username,f_name,l_name,email,ph_no,psw_hash,user_state,wallet_balance) VALUES ('$username','$f_name','$l_name','$email','$ph_no','$psw_hash','user_first','10000')";
     if ($conn->query($sql) === TRUE) {
-        create_stock_table($username);
         return 1;
     } else {
         return "Error: " . $sql . "<br>" . $conn->error;
@@ -33,24 +32,22 @@ function login($email, $psw_hash)
         return "nf";
     }
 }
-function create_stock_table($username)
-{
-    $conn = openCon();
-    $sql = "CREATE TABLE " . $username . " (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    stock_name VARCHAR(50) NOT NULL,
-    stock_quantity VARCHAR(50) NOT NULL,
-    stock_price VARCHAR(50) NOT NULL,
-    stock_gain VARCHAR(50),
-    purchased_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)";
-}
 function add_stock($username, $stock_name, $stock_quantity, $stock_price)
 {
     $conn = openCon();
-    $sql = "INSERT INTO " . $username . " (stock_name,stock_quantity,stock_price,stock_gain) VALUES ('$stock_name','$stock_quantity','$stock_price',0)";
+    $sql = "INSERT INTO stocks (username,stock_name,stock_quantity,stock_price,stock_gain) VALUES ('$username','$stock_name','$stock_quantity','$stock_price',0)";
     if ($conn->query($sql) === TRUE) {
-        create_stock_table($username);
         return 1;
+    } else {
+        return "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+function update_balance($username,$bal)
+{
+    $conn = openCon();
+    $sql = "UPDATE students  SET wallet_balance='$bal' WHERE email='$username'";
+    if ($conn->query($sql) === TRUE) {
+        return "1";
     } else {
         return "Error: " . $sql . "<br>" . $conn->error;
     }

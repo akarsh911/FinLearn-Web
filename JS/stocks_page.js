@@ -117,7 +117,7 @@ function
       },
       error: function (e) {
 
-        alert('Error: ' + JSON.stringify(e));
+        alert('Error in putting data: ' + JSON.stringify(e));
       }
     }
   );

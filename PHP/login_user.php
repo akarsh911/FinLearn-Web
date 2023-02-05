@@ -19,8 +19,9 @@ if ($resp == "nf") {
     $err = array();
     $err["val"] = "Invalid Credentials";
     echo "<script> sessionStorage.setItem('err', `" . json_encode($err, JSON_PRETTY_PRINT) . "`);</script>";
-    echo '<script>window.onload = (event) => {location.replace("../login")};</script>';
+    echo '<script>window.onload = (event) => {location.replace("../html/login_page.html")};</script>';
 } else {
     echo $resp;
     echo "<script> localStorage.setItem('user_data', `" . $resp . "`);</script>";
+    echo '<script>window.onload = (event) => {location.replace("../html/stocks_page.html")};</script>';
 }
