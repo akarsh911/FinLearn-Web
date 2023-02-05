@@ -1,12 +1,13 @@
 body {
     display: block;
     margin: 0px;
-}   
+}
+
 .top_bar {
     min-width: min-content;
-    width: 90vw;
-    height: 12vh;
-    max-height: 80px;
+    width: 100vw;
+    height: 15vh;
+    max-height: 100px;
     position: absolute;
     left: 0;
     top: 0;
@@ -53,9 +54,9 @@ body {
 }
 
 .community_btn {
-    
+
     border: #106409;
-   font-weight: bold;
+    font-weight: bold;
     font-size: 16px;
     padding: 10px;
     height: 40px;
@@ -63,9 +64,10 @@ body {
     margin-right: 10px;
     border-radius: 25px;
 }
-.log_in_bt{
+
+.log_in_bt {
     border: #106409;
-   font-weight: bold;
+    font-weight: bold;
     font-size: 16px;
     padding: 10px;
     height: 40px;
@@ -73,8 +75,9 @@ body {
     margin-right: 10px;
     border-radius: 25px;
 }
+
 .stock_btn {
-   
+
     border: #636804;
     font-weight: bold;
     font-size: 16px;
@@ -84,7 +87,8 @@ body {
     margin-right: 10px;
     border-radius: 25px;
 }
-.register{
+
+.register {
     border: #636804;
     font-weight: bold;
     font-size: 16px;
@@ -94,19 +98,22 @@ body {
     margin-right: 10px;
     border-radius: 25px;
 }
-.container_yt{
+
+.container_yt {
     padding-top: 10vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-content: space-around;
 }
-h1{
+
+h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-.expense_btn{
+
+.expense_btn {
     border: #cbd334;
     font-weight: bold;
     font-size: 16px;
@@ -116,41 +123,46 @@ h1{
     margin-right: 10px;
     border-radius: 25px;
 }
-.log_in_bt:hover{
+
+.log_in_bt:hover {
     background-color: rgb(235, 222, 102);
     border: #106409;
     cursor: pointer;
 }
-.register:hover{
+
+.register:hover {
     background-color: rgb(235, 222, 102);
     border: #106409;
     cursor: pointer;
 }
-.community_btn:hover{
-   background-color: rgb(235, 222, 102);
+
+.community_btn:hover {
+    background-color: rgb(235, 222, 102);
     border: #106409;
     cursor: pointer;
 }
 
 .stock_btn:hover {
-   background-color: rgb(235, 222, 102);
-    border: #636804;
-    cursor: pointer;
-}
-.expense_btn:hover{
     background-color: rgb(235, 222, 102);
     border: #636804;
     cursor: pointer;
 }
-.container{
+
+.expense_btn:hover {
+    background-color: rgb(235, 222, 102);
+    border: #636804;
+    cursor: pointer;
+}
+
+.container {
     display: flex;
-   padding-top: 12vh;
-   width: 100vw;
+    padding-top: 12vh;
+    width: 100vw;
     display: flex;
     align-items: center;
-   padding-bottom: 1vh;
-   margin-left: 0%;
-   
+    padding-bottom: 1vh;
+    margin-left: 0%;
+
     flex-direction: row;
     flex-wrap: wrap;
     align-content: normal;
@@ -158,24 +170,27 @@ h1{
     align-items: center;
     background-color: #ebde66;
 }
-.left_align{
+
+.left_align {
     padding-left: 1vw;
     font-size: 3vh;
     height: 100%;
     max-height: 100%;
     display: flex;
-     font-family: 'Times New Roman', serif;
+    font-family: 'Times New Roman', serif;
 }
-.right_align{
+
+.right_align {
     padding-right: 2vw;
     font-size: 3vh;
     height: 100%;
     max-height: 100%;
-     font-family: 'Times New Roman', serif;
+    font-family: 'Times New Roman', serif;
     display: flex;
     align-items: center;
 }
-#user_name_topbar{
+
+#user_name_topbar {
     padding-left: 5px;
 }
 
