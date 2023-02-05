@@ -9,10 +9,10 @@ $stock_price = trim($_GET["stock_price"], '\'"');
 $price = (float)$stock_price * (float)$stock_quantity;
 $resp = get_balance_values2($username);
 if ($price <= (float)$resp) {
-    echo $price;
+    // echo $price;
     $rem = (float)$resp - (float)$price;
     add_stock($username, $stock_name, $stock_quantity, $stock_price);
 
     update_balance($username, $rem);
 }
-//echo '<script>window.onload = (event) => {location.replace("/html/holdings.html")};</script>';
+echo '<script>window.onload = (event) => {location.replace("/html/holdings.html")};</script>';
