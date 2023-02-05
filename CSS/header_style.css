@@ -5,9 +5,9 @@ body {
 
 .top_bar {
     min-width: min-content;
-    width: 100vw;
-    height: 15vh;
-    max-height: 100px;
+    width: 90vw;
+    height: 12vh;
+    max-height: 80px;
     position: absolute;
     left: 0;
     top: 0;
