@@ -37,7 +37,7 @@ inputBox.onkeyup = (e) => {
           let emptyArray = [];
           if (userData) {
             icon.onclick = () => {
-              webLink = "/trade_stocks.html?q=" + get_code(userData, json) + "&name=" + selectData;
+              webLink = "/trade_stocks.html?q=" + get_code(userData, json) + "&name=" + userData + "&exch=" + get_stock_exchange(get_code(userData, json), get_country(userData, json));
               linkTag.setAttribute("href", webLink);
               linkTag.click();
             }
@@ -72,11 +72,18 @@ function get_code(name, json) {
       return json.bestMatches[i].symbol;
   }
 }
+function get_country(name, json) {
+  for (var i = 0; i < json.bestMatches.length; i++) {
+    if (json.bestMatches[i].name == name)
+      return json.bestMatches[i].region;
+  }
+}
 function select(element) {
   let selectData = element.textContent;
   inputBox.value = selectData;
   icon.onclick = () => {
-    webLink = "/html/trade_stocks.html?q=" + get_code(selectData, json) + "&name=" + selectData;
+    var code = get_code(selectData, json);
+    webLink = "/html/trade_stocks.html?q=" + code + "&name=" + selectData + "&exch=" + get_stock_exchange(code, get_country(selectData, json));
     linkTag.setAttribute("href", webLink);
     linkTag.click();
   }
@@ -91,4 +98,27 @@ function showSuggestions(list) {
     listData = list.join('');
   }
   suggBox.innerHTML = listData;
+}
+function
+  get_stock_exchange(symbol, country) {
+  if (symbol.indexOf('.') != -1) {
+    symbol = symbol.substring(symbol.indexOf('.'), symbol.length - 1)
+  }
+  $.ajax(
+    {
+      url: 'https://fcsapi.com/api-v3/stock/latest?symbol=' + symbol + '&country=' + country + '&access_key=K4JBCtMEMFgkpTsawqHe',
+      dataType: "html",
+      success: function (data2) {
+        console.log(data2);
+        json = JSON.parse(data2);
+        console.log(json);
+        console.log(json.$response[0]);
+        return json.response[0].exch;
+      },
+      error: function (e) {
+
+        alert('Error: ' + JSON.stringify(e));
+      }
+    }
+  );
 }
