@@ -1,0 +1,114 @@
+{
+    "bestMatches": [
+        {
+            "1. symbol": "AAA",
+            "2. name": "AXS FIRST PRIORITY CLO BOND ETF ",
+            "3. type": "ETF",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-04",
+            "8. currency": "USD",
+            "9. matchScore": "1.0000"
+        },
+        {
+            "1. symbol": "AAAAX",
+            "2. name": "DWS RREEF REAL ASSETS FUND CLASS A",
+            "3. type": "Mutual Fund",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-04",
+            "8. currency": "USD",
+            "9. matchScore": "0.7500"
+        },
+        {
+            "1. symbol": "AAACX",
+            "2. name": "Alpha Alternative Assets Fd. USD",
+            "3. type": "Mutual Fund",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-04",
+            "8. currency": "USD",
+            "9. matchScore": "0.7500"
+        },
+        {
+            "1. symbol": "AAADX",
+            "2. name": "ALPINE RISING DIVIDEND FUND CLASS A",
+            "3. type": "Mutual Fund",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-04",
+            "8. currency": "USD",
+            "9. matchScore": "0.7500"
+        },
+        {
+            "1. symbol": "AAAEX",
+            "2. name": "VIRTUS KAR HEALTH SCIENCES FUND P",
+            "3. type": "Mutual Fund",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-04",
+            "8. currency": "USD",
+            "9. matchScore": "0.7500"
+        },
+        {
+            "1. symbol": "AAAFX",
+            "2. name": "ONE CHOICE BLEND+ 2015 PORTFOLIO INVESTOR CLASS",
+            "3. type": "Mutual Fund",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-04",
+            "8. currency": "USD",
+            "9. matchScore": "0.7500"
+        },
+        {
+            "1. symbol": "AAAGX",
+            "2. name": "THRIVENT LARGE CAP GROWTH FUND CLASS A",
+            "3. type": "Mutual Fund",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-04",
+            "8. currency": "USD",
+            "9. matchScore": "0.7500"
+        },
+        {
+            "1. symbol": "AAAHX",
+            "2. name": "ONE CHOICE BLEND+ 2015 PORTFOLIO I CLASS",
+            "3. type": "Mutual Fund",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-04",
+            "8. currency": "USD",
+            "9. matchScore": "0.7500"
+        },
+        {
+            "1. symbol": "AAAIF",
+            "2. name": "Alternative Investment Trust",
+            "3. type": "Equity",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-04",
+            "8. currency": "USD",
+            "9. matchScore": "0.7500"
+        },
+        {
+            "1. symbol": "AAA.PAR",
+            "2. name": "Alan Allman Associates SA",
+            "3. type": "Equity",
+            "4. region": "Paris",
+            "5. marketOpen": "09:00",
+            "6. marketClose": "17:30",
+            "7. timezone": "UTC+02",
+            "8. currency": "EUR",
+            "9. matchScore": "0.6667"
+        }
+    ]
+}
