@@ -1,4 +1,5 @@
 READ ME:
+To Run this project you need to host this site on a Apache Server and configure database_connect.php flie.
 INTRODUCTION:
 Finlearn helps inculcate the knowledge of day to day
 trading in new world's teens.With the use of real-time trading data and preparing them for future financial 
