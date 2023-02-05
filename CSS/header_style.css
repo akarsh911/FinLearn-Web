@@ -176,7 +176,7 @@ h1 {
 
 .left_align {
     padding-left: 1vw;
-    font-size: 4vh;
+    font-size: 3vh;
     height: 100%;
     max-height: 100%;
     display: flex;
@@ -185,7 +185,7 @@ h1 {
 
 .right_align {
     padding-right: 2vw;
-    font-size: 4vh;
+    font-size: 3vh;
     height: 100%;
     max-height: 100%;
     font-family: 'M PLUS Rounded 1c', sans-serif;
